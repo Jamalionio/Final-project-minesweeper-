@@ -4,7 +4,7 @@ A text based version of the Minesweeper game for Terminal
 
 Final project for Systems, Algorithms and Programming 1 - course 
 
-Group: Jamal Aghasi, Name2, Name3, Name4, Name5 ( add your full names )
+Group: Jamal Aghasi, Aydan Nuraddinli, Sevida Ibrahimova, Lala Abdullayeva, Name5 ( add your full names )
 
 Deadline: 30/11
 
@@ -12,6 +12,8 @@ Deadline: 30/11
 
 - Python 3,7 or later
 - No imported modules except: random and time
+- Every function has a docstring
+- No OOP and no global variables ( constants in capital letter are  allowed )
 
 ## HOW TO RUN
 
@@ -65,6 +67,29 @@ Player types one command per turn ( not case-sensative ):
 - At start player can give an optional seed: the same seed and the same first move gives the same board
 
 # Project structure 
+
+| File | Content |
+| --- | --- |
+| main.py | proplay_game, main|
+| board.py | create_board, new_state, show_help |
+| logic.py | toggle_flag, check_win, check_lose |
+| neighbors.py | neighbors, count_adjacent, compute_numbers |
+| output.py | parse_command, display_board |
+| core.py | place_mines, reveal |
+| tests.py | tests for all functions above |
+
+- Each member writes their own functions in their own file 
+
+## Data structures 
+
+- Board: a list of lists of symbols ( nested list )
+- Mines: a set of tuples (row, colm)
+- Game state: a dictionary state ( size, mines, revealed cells, flags, game_over and so on )
+- Neighbors search: one function only ( neighbors )
+
+# Work distribution 
+
+`still empty
 
 
 
