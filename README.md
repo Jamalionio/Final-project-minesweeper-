@@ -70,7 +70,8 @@ Player types one command per turn ( not case-sensative ):
 
 | File | Content |
 | --- | --- |
-| main.py | proplay_game, main|
+| main.py | main|
+| play.py | play_game, choose_level |
 | board.py | create_board, new_state, show_help |
 | logic.py | toggle_flag, check_win, check_lose |
 | neighbors.py | neighbors, count_adjacent, compute_numbers |
