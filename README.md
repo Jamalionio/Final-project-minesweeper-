@@ -4,7 +4,7 @@ A text based version of the Minesweeper game for Terminal
 
 Final project for Systems, Algorithms and Programming 1 - course 
 
-Group: Jamal Aghasi, Aydan Nuraddinli, Sevida Ibrahimova, Lala Abdullayeva, Name5 ( add your full names )
+Group: Jamal Aghasi, Aydan Nuraddinli, Sevida Ibrahimova, Lala Abdullayeva, Ali Talishkhanov
 
 Deadline: 30/11
 
