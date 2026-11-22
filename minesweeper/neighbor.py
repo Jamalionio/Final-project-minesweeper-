@@ -1,6 +1,6 @@
 '''neighbors.py - neighbor search and numbers around cells.
 
-Owner: Your name
+Owner: Jamal Aghasi
 '''
 
 
