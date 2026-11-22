@@ -10,7 +10,19 @@ def main():
   '''
   Menu : start a game , then ask "play again ?" or quit 
   '''
-  pass
+  while True:
+    play_game()
+    answer = input("Would you like to play again?\nYES/NO - Y/N").lower()
+    while answer not in ("y", "yes", "n", "no"):
+      answer = input("Invalid value\nPlay again?\nYES/NO - Y/N").lower()
+    if answer in ("y", "yes"):
+      continue
+    elif answer in ("n", "no"):
+      return True
+      
+    
+      
 
 if __name__ == "__main__":
-  main()
+  if main():
+    print("Goodbye!")
