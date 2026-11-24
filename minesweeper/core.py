@@ -5,10 +5,10 @@ Owner: Jamal Aghasi
 
 import random
 
-from neighbours import neighbours, compute_numbers
+from neighbour import neighbours, compute_numbers
 
 
-def place_mines(rows, cols, nb_mines, safe_cell):
+def place_mines(rows, colms, nb_mines, safe_cell):
     '''Randomly place the mines, never on safe_cell.
 
     Parameters:
@@ -19,8 +19,15 @@ def place_mines(rows, cols, nb_mines, safe_cell):
     Returns:
         set: set of tuples (row, col) containing the mines
     '''
-    pass
+    
+    mines = set()
+    while len(mines) < nb_mines:
+        mine = (random.randint(0, rows - 1), random.randint(1, colms - 1)
+        if mine == safe_cell or mine in mines:
+                continue
+        mines.add(mine)
 
+    return mines
 
 def reveal(cell, state):
     '''Reveal a cell. If it has 0 neighbouring mines, flood fill.
