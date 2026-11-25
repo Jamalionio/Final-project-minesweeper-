@@ -8,7 +8,7 @@ import random
 from neighbor import neighbors, compute_numbers
 
 
-def place_mines(rows, colms, nb_mines, safe_cell):
+def place_mines(rows, cols, nb_mines, safe_cell):
     '''Randomly place the mines, never on safe_cell.
 
     Parameters:
@@ -56,8 +56,8 @@ def reveal(cell, state):
         state["game_over"] = True
         
     if state["first_move"]:
-        state["mines"] = place_mines(state["rows"], state["colms"], state["nb_mines"], cell)
-        state["numbers"] = compute_numbers(state["rows"], state["colms"], state["mines"])
+        state["mines"] = place_mines(state["rows"], state["cols"], state["nb_mines"], cell)
+        state["numbers"] = compute_numbers(state["rows"], state["cols"], state["mines"])
         state["first_move"] = False
         
     stack = [cell]
@@ -69,7 +69,7 @@ def reveal(cell, state):
         state["revealed"].add(cell)
         if num == 0:
             state["board"][row][colm] = "."
-            for c in neighbor(row, colm, state["rows"], state["colms"]):
+            for c in neighbor(row, colm, state["rows"], state["cols"]):
                 if c not in state["revealed"] or c not in state["flags"]:
                     stack.append(c)
             else:
