@@ -22,7 +22,7 @@ def place_mines(rows, cols, nb_mines, safe_cell):
     
     mines = set()
     while len(mines) < nb_mines:
-        mine = (random.randint(0, rows - 1), random.randint(1, colms - 1))
+        mine = (random.randint(0, rows - 1), random.randint(0, cols - 1))
         if mine == safe_cell or mine in mines:
                 continue
         mines.add(mine)
