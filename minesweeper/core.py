@@ -56,13 +56,17 @@ def reveal(cell, state):
         state["game_over"] = True
         
     if state["first_move"]:
-        state["mines"] = place_mines(cell)
-        state["numbers"] = compute_numbers(state["rows"], state["colms"], state["mines"]) ###
+        state["mines"] = place_mines(state["rows"], state["colms"], state["nb_mines"], cell)
+        state["numbers"] = compute_numbers(state["rows"], state["colms"], state["mines"])
         state["first_move"] = False
         
     state["board"][cell[0]][cell[1]] == state["numbers"][cell[0]][cell[1]]
     if state["board"][cell[0]][cell[1]] == 0:
-    pass
+        neighbors = neighbor(cell[0], cell[1], state["rows"], state["colms"]
+        for n in neighbors:
+            a = reveal(n, state)
+            if not a[0]:
+                return False
         
         
         
