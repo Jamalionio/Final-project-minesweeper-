@@ -90,7 +90,14 @@ Player types one command per turn ( not case-sensative ):
 
 # Work distribution 
 
-`still empty
+
+| Name | Work |
+| --- | --- |
+| Jamal Aghasi | main.py, play.py, core.py |
+| Ali Talishkhanov | --- |
+| Lala Abdullayeva | --- |
+| Aydan Nuraddinli | --- |
+| Sevida Ibrahimova | --- |
 
 
 
