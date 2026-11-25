@@ -5,7 +5,7 @@ Owner: Jamal Aghasi
 
 import random
 
-from neighbour import neighbours, compute_numbers
+from neighbor import neighbors, compute_numbers
 
 
 def place_mines(rows, colms, nb_mines, safe_cell):
@@ -48,7 +48,7 @@ def reveal(cell, state):
     if cell in state["revealed"]:
         return (False, "You cannot open revealed cell, choose another one!")
         
-    if cell in state["flagged"]:
+    if cell in state["flags"]:
         return (False, "You cannot open the flagged cell, remove flag fom there or choose another cell!")
         
     if cell in state["mines"]:
@@ -60,13 +60,23 @@ def reveal(cell, state):
         state["numbers"] = compute_numbers(state["rows"], state["colms"], state["mines"])
         state["first_move"] = False
         
-    state["board"][cell[0]][cell[1]] == state["numbers"][cell[0]][cell[1]]
-    if state["board"][cell[0]][cell[1]] == 0:
-        neighbors = neighbor(cell[0], cell[1], state["rows"], state["colms"]
-        for n in neighbors:
-            a = reveal(n, state)
-            if not a[0]:
-                return False
+    stack = [cell]
+    while stack:
+        row, colm = stack.pop()
+        if (row, colm) in state["flags"] or (row, colm) in state["revealed"]:
+            continue
+        num = state["numbers"][row][colm]
+        state["revealed"].add(cell)
+        if num == 0:
+            state["board"][row][colm] = "."
+            for c in neighbor(row, colm, state["rows"], state["colms"]):
+                if c not in state["revealed"] or c not in state["flags"]:
+                    stack.append(c)
+            else:
+                state["board"][row][colm] = str(num)
+
+    return (True, "")
+            
         
         
         
