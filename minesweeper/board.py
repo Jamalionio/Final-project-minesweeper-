@@ -14,7 +14,7 @@ def create_board(rows, cols):
     Returns:
         list: list of lists filled with the symbol '#'
     '''
-        board=[]
+    board=[]
     r=0
     while r < rows:
         row=[]
@@ -52,7 +52,7 @@ def new_state(rows, cols, nb_mines):
     Returns:
         dict: the state of a new game
     '''
-        state = {
+    state = {
         "rows": rows,
         "cols": cols,
         "nb_mines": nb_mines,
