@@ -14,16 +14,16 @@ def create_board(rows, cols):
     Returns:
         list: list of lists filled with the symbol '#'
     '''
-    board=[]
-    r=0
+    board = []
+    r = 0
     while r < rows:
-        row=[]
-        c=0
+        row = []
+        c = 0
         while c < cols:
             row.append("#")
-            c=c+1
+            c = c+1
         board.append(row)
-        r=r+1
+        r = r+1
     return board
 
 
@@ -72,7 +72,7 @@ def new_state(rows, cols, nb_mines):
 def show_help():
     '''Print the list of commands (R, F, D, H, Q) with an example each.
     '''
-        print("R <cell> : reveal a cell (example: R E5)")
+    print("R <cell> : reveal a cell (example: R E5)")
     print("F <cell> : place or remove a flag (example: F C3)")
     print("D        : toggle debug mode to show mines (example: D)")
     print("H        : show help (example: H)")
