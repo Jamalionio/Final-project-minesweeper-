@@ -94,10 +94,10 @@ Player types one command per turn ( not case-sensative ):
 | Name | Work |
 | --- | --- |
 | Jamal Aghasi | main.py, play.py, core.py |
-| Ali Talishkhanov | --- |
-| Lala Abdullayeva | --- |
-| Aydan Nuraddinli | --- |
-| Sevida Ibrahimova | --- |
+| Ali Talishkhanov | neighbor.py |
+| Lala Abdullayeva | input_output.py |
+| Aydan Nuraddinli | board.py |
+| Sevida Ibrahimova | logic.py |
 
 
 
