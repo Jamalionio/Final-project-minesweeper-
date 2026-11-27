@@ -42,7 +42,7 @@ def count_adjacent(row, col, rows, cols, mines):
     Returns:
         int: number of neighbouring mines
     '''
-    pass
+    return sum(1 for r, c in neighbours(row, col, rows, cols) if (r, c) in mines)
 
 
 def compute_numbers(rows, cols, mines):
