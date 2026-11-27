@@ -15,7 +15,20 @@ def neighbors(row, col, rows, cols):
         list: list of tuples (row, col) of the neighbors inside the board
               (3 for a corner, 5 for an edge, 8 in the middle)
     '''
-    pass
+    result = []
+
+    for dr in (-1, 0, 1):
+        for dc in (-1, 0, 1):
+            if dr == 0 and dc == 0:
+                continue
+
+            nr = row + dr
+            nc = col + dc
+
+            if 0 <= nr < rows and 0 <= nc < cols:
+                result.append((nr, nc))
+
+    return result
 
 
 def count_adjacent(row, col, rows, cols, mines):
