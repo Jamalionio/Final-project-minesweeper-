@@ -6,7 +6,7 @@ Team rules: see README.md (coordinates are (row, col), counted from zero).
 
 import random
 
-from board import create_board, new_state, show_help
+from board import new_state, show_help
 from logic_simple import toggle_flag, check_win, check_loss
 from input_output import parse_command, display_board
 from core import reveal
@@ -31,14 +31,14 @@ def choose_level():
     level = input("Choose level (1/2/3): ").strip()
     while level not in LEVELS:
         print("Invalid value")
-        level = input("Try again, (1/2/3): ")
+        level = input("Try again, (1/2/3): ").strip()
         
-    dif, rows, cols, nb_mines = LEVEL[level]
+    dif, rows, cols, nb_mines = LEVELS[level]
 
-    seed = input("Choose optional seed or leave it empty: ")
+    seed = input("Choose optional seed or leave it empty: ").strip()
     while seed and not seed.isdecimal():
         print("Invalid value")
-        seed = input("Try again: ")
+        seed = input("Try again: ").strip()
 
     if seed:
         random.seed(int(seed))
@@ -70,7 +70,7 @@ def play_game():
 
         if command == "Q":
             display_board(state, True)
-            print("You have quited the game")
+            print("You have quit the game")
             break
 
         if command == "H":
@@ -92,9 +92,9 @@ def play_game():
 
         if check_loss(state):
             display_board(state, True)
-            print("BOOOM!!!\nYou hit a mine. You loss :(")
+            print("BOOOM!!!\nYou hit a mine. You lost :(")
             break
         if check_win(state):
-            dsiplay_board(state, True)
+            display_board(state, True)
             print("Congratulations, You won!!!")
 
