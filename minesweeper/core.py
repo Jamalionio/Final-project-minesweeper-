@@ -54,6 +54,7 @@ def reveal(cell, state):
     if cell in state["mines"]:
         state["hit"] = cell 
         state["game_over"] = True
+        return (True, "")
         
     if state["first_move"]:
         state["mines"] = place_mines(state["rows"], state["cols"], state["nb_mines"], cell)
@@ -70,7 +71,7 @@ def reveal(cell, state):
         if num == 0:
             state["board"][row][colm] = "."
             for c in neighbor(row, colm, state["rows"], state["cols"]):
-                if c not in state["revealed"] or c not in state["flags"]:
+                if c not in state["revealed"] and c not in state["flags"]:
                     stack.append(c)
             else:
                 state["board"][row][colm] = str(num)
