@@ -46,6 +46,7 @@ Player types one command per turn ( not case-sensative ):
 | . | Revealed cell with no neighboring mines |
 | 1 - 8 | Number of neighboring mines |
 | * | Mine |
+| W | Wrongly flagged cell |
 | X | The mine that was hit |
 
 ### Difficulty levels 
