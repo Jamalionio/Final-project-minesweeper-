@@ -23,10 +23,20 @@ def choose_level():
     Returns:
         tuple: (rows, cols, nb_mines)
     '''
-    if input("Would you like to choose an optional seed?\nEnter YES or Y if so, or 'N' or 'NO' if changed your mind ").lower() in ("yes", "y"):
-        seed = input("Your seed: ")
-        if seed.isdecimal():
-     
+    print("Choose level: ")
+    for key in LEVELS:
+        dif, rows, cols, nb_mines = LEVELS[key]
+        print(f"{key} - {dif} ({rows} X {cols}, {nb_mines} mines)")
+
+    level = input("Choose level (1/2/3): ").strip()
+    while level not in LEVELS:
+        print("Invalid value")
+        level = input("Try again, (1/2/3): ")
+        
+     dif, rows, cols, nb_mines = LEVEL[level]
+
+    seed = input("
+
 def play_game():
     '''Play one full game: choose level, loop on commands until the end.
 
