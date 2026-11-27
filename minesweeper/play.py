@@ -33,9 +33,17 @@ def choose_level():
         print("Invalid value")
         level = input("Try again, (1/2/3): ")
         
-     dif, rows, cols, nb_mines = LEVEL[level]
+    dif, rows, cols, nb_mines = LEVEL[level]
 
-    seed = input("
+    seed = input("Choose optional seed or leave it empty: ")
+    while seed and not seed.isdecimal():
+        print("Invalid value")
+        seed = input("Try again: ")
+
+    if seed:
+        random.seed(int(seed))
+
+    return rows, cols, nb_mines
 
 def play_game():
     '''Play one full game: choose level, loop on commands until the end.
