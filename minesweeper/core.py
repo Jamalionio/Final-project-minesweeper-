@@ -67,14 +67,14 @@ def reveal(cell, state):
         if (row, colm) in state["flags"] or (row, colm) in state["revealed"]:
             continue
         num = state["numbers"][row][colm]
-        state["revealed"].add(cell)
+        state["revealed"].add((row, colm))
         if num == 0:
             state["board"][row][colm] = "."
             for c in neighbor(row, colm, state["rows"], state["cols"]):
                 if c not in state["revealed"] and c not in state["flags"]:
                     stack.append(c)
-            else:
-                state["board"][row][colm] = str(num)
+        else:
+            state["board"][row][colm] = str(num)
 
     return (True, "")
             
