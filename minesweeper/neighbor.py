@@ -1,6 +1,6 @@
 '''neighbors.py - neighbor search and numbers around cells.
 
-Owner: Jamal Aghasi
+Owner: Ali Talishkhanov
 '''
 
 
