@@ -80,12 +80,13 @@ def display_board(state, show_mines):
             if show_mines and cell in mines:
                 if cell==hit:
                     sign="X"
-                elif cell in flags:
-                    sign="W'
                 else:
                     sign="*"
             elif cell in flags:
-                sign="F"
+                if show_mines:
+                    sign = "W"
+                else:
+                    sign="F"
             elif cell in revealed:
                 sign=board[i][z]
             else:
