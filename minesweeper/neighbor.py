@@ -32,7 +32,7 @@ def neighbors(row, col, rows, cols):
 
 
 def count_adjacent(row, col, rows, cols, mines):
-    '''Count the mines around one cell (uses neighbours).
+    '''Count the mines around one cell (uses neighbors).
 
     Parameters:
         row, col (int): the cell
@@ -40,9 +40,9 @@ def count_adjacent(row, col, rows, cols, mines):
         mines (set): positions of the mines
 
     Returns:
-        int: number of neighbouring mines
+        int: number of neighboring mines
     '''
-    return sum(1 for r, c in neighbours(row, col, rows, cols) if (r, c) in mines)
+    return sum(1 for r, c in neighbors(row, col, rows, cols) if (r, c) in mines)
 
 
 def compute_numbers(rows, cols, mines):
