@@ -8,7 +8,7 @@ import random
 
 from board import create_board, new_state, show_help
 from logic_simple import toggle_flag, check_win, check_loss
-from io_utils import parse_command, display_board
+from input_output import parse_command, display_board
 from core import reveal
 
 LEVELS = {"1": ("Easy", 9, 9, 10), "2": ("Medium", 12, 12, 25), "3": ("Hard", 16, 16, 40)}
@@ -50,8 +50,51 @@ def play_game():
 
     Loop: display_board -> input -> parse_command -> action
     (reveal / toggle_flag / debug / help / quit) -> check_loss / check_win.
-    At the end display the full board (show_mines=True).
+    At the end display the full board (show_mines=True). 
 
+    Returns: None
     
     '''
-    pass
+    
+    rows, cols, nb_mines = choose_level()
+    state = new_state(rows, cols, nb_mines)
+    show_mines = False
+    while True:
+        display_board(state, show_mines)
+        action = input("Command (R cell / F cell / D / H / Q): ")
+        command, cell, error = parse_command(action, rows, cols)
+
+        if error != None:
+            print(error)
+            continue
+
+        if command == "Q":
+            display_board(state, True)
+            print("You have quited the game")
+            break
+
+        if command == "H":
+            show_help()
+            continue 
+
+        if command == "D":
+            show_mines = not show_mines
+            continue
+
+        if command == "R":
+            ok, message = reveal(cell, state)
+        else:
+            ok, message = toggle_flag(cell, state)
+
+        if not ok:
+            print(message)
+            continue
+
+        if check_loss(state):
+            display_board(state, True)
+            print("BOOOM!!!\nYou hit a mine. You loss :(")
+            break
+        if check_win(state):
+            dsiplay_board(state, True)
+            print("Congratulations, You won!!!")
+
