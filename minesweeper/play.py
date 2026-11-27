@@ -97,4 +97,4 @@ def play_game():
         if check_win(state):
             display_board(state, True)
             print("Congratulations, You won!!!")
-
+            break
