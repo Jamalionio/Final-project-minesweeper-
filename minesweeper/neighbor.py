@@ -55,4 +55,13 @@ def compute_numbers(rows, cols, mines):
     Returns:
         list: list of lists of int; a cell with a mine gets -1
    '''
-    pass
+    board = []
+    for r in range(rows):
+        row = []
+        for c in range(cols):
+            if (r, c) in mines:
+                row.append(-1)
+            else:
+                row.append(count_adjacent(r, c, rows, cols, mines))
+        board.append(row)
+    return board
