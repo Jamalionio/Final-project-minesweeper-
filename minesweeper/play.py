@@ -7,7 +7,7 @@ Team rules: see README.md (coordinates are (row, col), counted from zero).
 import random
 
 from board import new_state, show_help
-from logic_simple import toggle_flag, check_win, check_loss
+from logic import toggle_flag, check_win, check_loss
 from input_output import parse_command, display_board
 from core import reveal
 
