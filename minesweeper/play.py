@@ -23,9 +23,10 @@ def choose_level():
     Returns:
         tuple: (rows, cols, nb_mines)
     '''
-    pass
-
-
+    if input("Would you like to choose an optional seed?\nEnter YES or Y if so, or 'N' or 'NO' if changed your mind ").lower() in ("yes", "y"):
+        seed = input("Your seed: ")
+        if seed.isdecimal():
+     
 def play_game():
     '''Play one full game: choose level, loop on commands until the end.
 
